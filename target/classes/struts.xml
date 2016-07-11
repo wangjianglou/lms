@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE struts PUBLIC  
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"  
+    "http://struts.apache.org/dtds/struts-2.0.dtd">  
+  
+<struts>  
+    <constant name="struts.i18n.encoding" value="utf-8"></constant>  
+    <constant name="struts.multipart.maxSize" value="20971520"/>  
+    <constant name="struts.devMode" value="true" />  
+      
+    <package name="json" namespace="/json" extends="struts-default">  
+    <result-types>  
+            <result-type name="json" class="org.apache.struts2.json.JSONResult"/>  
+        </result-types>
+    <interceptors>  
+            <interceptor name="json" class="org.apache.struts2.json.JSONInterceptor"/>  
+        </interceptors>
+        <action name="getAllUsers" class="com.lms.action.UserAction" method="getUsers">  
+            <result type="json">  
+                <param name="root">userList</param>  
+            </result>  
+        </action>  
+          
+        <!-- <action name="login" class="com.lms.action.UserAction" method="login">  
+            <result name="success">  
+                /login_success.jsp  
+            </result>  
+        </action>   -->
+    </package>  
+      
+</struts>  

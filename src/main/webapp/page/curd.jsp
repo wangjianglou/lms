@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Basic CRUD Application - jQuery EasyUI CRUD Demo</title>
+    <link rel="stylesheet" type="text/css" href="http://www.jeasyui.com/easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="http://www.jeasyui.com/easyui/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="http://www.jeasyui.com/easyui/themes/color.css">
+    <link rel="stylesheet" type="text/css" href="http://www.jeasyui.com/easyui/demo/demo.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.min.js"></script>
+    <script type="text/javascript" src="http://www.jeasyui.com/easyui/jquery.easyui.min.js"></script>
+</head>
+<body>
+    <table id="dg"></table>
+    <script type="text/javascript">
+    $('#dg').datagrid({
+        url:'getAllUsers.action',
+        columns:[[
+            {field:'id',title:'ID',width:100},
+            {field:'name',title:'Name',width:100},
+            {field:'sex',title:'Sex',width:100,align:'right'}
+        ]]
+    });
+    </script>
+</body>
+</html>
